@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 75vw;
+  margin: 20px auto;
+}
+.categoryname {
+  list-style: none;
+}
+
+.category {
+  display: flex;
+  width: 200px;
+  padding: 5px;
+  gap: 5px;
+  border-right: 1.5px solid rgb(203, 203, 203);
+}
+
+.toggledata {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 8px;
+}
