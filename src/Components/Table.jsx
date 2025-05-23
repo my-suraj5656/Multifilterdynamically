@@ -56,7 +56,7 @@ const Table = () => {
     // console.log(groupfilter);
     const filteredArray = array.filter((item) => {
       return Object.entries(groupfilter).every(([group, key]) => {
-        console.log(group, key);
+        // console.log(group, key);
         return key.includes(String(item[group])?.toLowerCase());
       });
     });
