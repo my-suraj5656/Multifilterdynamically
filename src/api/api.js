@@ -32,5 +32,6 @@ export const array = [
     category: "two",
     type: "C",
     active: "FALSE",
+    town: "surat"
   },
 ];

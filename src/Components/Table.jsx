@@ -32,29 +32,32 @@ const Table = () => {
   };
 
   useEffect(() => {
-    // console.log("search");
     const truedata = [];
-    // console.log(truedata);
+    console.log(truedata);
 
     if (tooglestate) {
       for (const group in tooglestate) {
-        // console.log(tooglestate[values]);
         const obj = tooglestate[group];
 
         for (const [key, value] of Object.entries(obj)) {
-          // console.log(key, value);
           if (value) {
             truedata.push({ group, key });
           }
         }
       }
     }
+    const groupfilter = truedata.reduce((acc, { group, key }) => {
+      if (!acc[group]) {
+        acc[group] = [];
+      }
+      acc[group].push(key.toLowerCase());
+      return acc;
+    }, {});
+    console.log(groupfilter);
     const filteredArray = array.filter((item) => {
-      // console.log(item);
-      return truedata.every(({ group, key }) => {
-        return (
-          String(item[group])?.toLowerCase() === String(key)?.toLowerCase()
-        );
+      return Object.entries(groupfilter).every(([group, key]) => {
+        console.log(group, key);
+        return key.includes(String(item[group])?.toLowerCase());
       });
     });
 
@@ -78,7 +81,6 @@ const Table = () => {
   useEffect(() => {
     if (data) {
       const accdata = gettoggleobj(data);
-      // console.log(accdata);
       settogglearray(accdata);
     }
   }, [data]);
