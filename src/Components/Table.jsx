@@ -33,7 +33,7 @@ const Table = () => {
 
   useEffect(() => {
     const truedata = [];
-    console.log(truedata);
+    // console.log(truedata);
 
     if (tooglestate) {
       for (const group in tooglestate) {
@@ -53,7 +53,7 @@ const Table = () => {
       acc[group].push(key.toLowerCase());
       return acc;
     }, {});
-    console.log(groupfilter);
+    // console.log(groupfilter);
     const filteredArray = array.filter((item) => {
       return Object.entries(groupfilter).every(([group, key]) => {
         console.log(group, key);
